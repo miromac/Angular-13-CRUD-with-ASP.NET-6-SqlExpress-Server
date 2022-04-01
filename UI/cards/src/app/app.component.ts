@@ -10,6 +10,14 @@ import { CardsService } from './service/cards.service';
 export class AppComponent implements OnInit{
   title = 'cards';
 	cards: Card[] = [];
+	card: Card = {
+		id: '',
+		cardNumber: '',
+		cardholderName: '',
+		expiryMonth: '',
+		expiryYear: '',
+		cvc: ''
+	}
 
   constructor(private cardsService: CardsService) {
 
@@ -27,4 +35,24 @@ export class AppComponent implements OnInit{
 			}
     );
   }
+
+	onSubmit() {
+		//console.log(this.card);
+		this.cardsService.addCard(this.card)
+		.subscribe(
+			response => {
+				//console.log(response);
+				this.getAllCards();
+				this.card = {
+					id: '',
+					cardNumber: '',
+					cardholderName: '',
+					expiryMonth: '',
+					expiryYear: '',
+					cvc: ''
+				}
+			}
+		)
+	}
+
 }
