@@ -22,4 +22,8 @@ export class CardsService {
     return this.http.post<Card>(this.baseUrl, card);
   }
 
+  deleteCard(id: string): Observable<Card> {
+    return this.http.delete<Card>(this.baseUrl + '/' + id);
+  }
+
 }
