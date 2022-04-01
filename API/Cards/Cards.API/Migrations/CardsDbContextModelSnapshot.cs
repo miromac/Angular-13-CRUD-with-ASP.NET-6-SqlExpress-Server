@@ -47,7 +47,7 @@ namespace Cards.API.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("MyProperty");
+                    b.ToTable("Cards");
                 });
 #pragma warning restore 612, 618
         }

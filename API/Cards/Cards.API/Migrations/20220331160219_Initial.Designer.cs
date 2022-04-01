@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Cards.API.Migrations
 {
     [DbContext(typeof(CardsDbContext))]
-    [Migration("20220330170605_initial")]
-    partial class initial
+    [Migration("20220331160219_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -49,7 +49,7 @@ namespace Cards.API.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("MyProperty");
+                    b.ToTable("Cards");
                 });
 #pragma warning restore 612, 618
         }
